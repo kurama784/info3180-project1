@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Userid</th>
+                <th>Username</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Age</th>
+                <th>High score</th>
+                <th>TDollars</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td><a href="/profile/{{ user.user_id }}">{{ user.user_id}}</a></td>
+                    <td>{{ user.username}}</td>
+                    <td>{{ user.first_name}}</td>
+                    <td>{{ user.last_name}}</td>
+                    <td>{{ user.age}}</td>
+                    <td>{{ user.high_score}}</td>
+                    <td>{{ user.tdollars}}</td>
+                    <td><a class='btn btn-danger btn-sm' href='/profile/delete/{{ user.user_id }}'>Remove</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="/profile" enctype="multipart/form-data" class="col-xs-4">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(size=30, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.first_name.label }}
+        {{ form.first_name(size=30, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.last_name.label }}
+        {{ form.last_name(size=30, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.age.label }}
+        {{ form.age(size=30, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.sex.label }}
+        {{ form.sex(class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.image.label }}
+        {{ form.image  }}
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{% endblock %}

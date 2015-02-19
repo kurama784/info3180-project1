@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col-xs-5">
+        <img src="{{ user.get_image_url() }}" class="col-xs-12"/>
+    </div>
+    <div class="col-xs-ofset-5 col-xs-7">
+        <div class="alert alert-info">{{ user.first_name }} {{ user.last_name }}</div>
+        <div class="alert alert-info">Profile added on: {{ user.added_on.strftime("%a, %d %b %Y") }}</div>
+        <div class="alert alert-info">
+            Username: {{ user.username }}<br/>
+            ID: {{ user.user_id }}<br/>
+            Sex: {{ user.get_sex_display() }}<br/>
+            Age: {{ user.age }}<br/>
+            Highest score: {{ user.high_score }}<br/>
+            TDollars: {{ user.tdollars }}<br/>
+        </div>
+    </div>
+{% endblock %}
